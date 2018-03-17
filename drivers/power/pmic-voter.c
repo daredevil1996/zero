@@ -386,8 +386,12 @@ int vote(struct votable *votable, const char *client_str, bool enabled, int val)
 	votable->votes[client_id].enabled = enabled;
 	votable->votes[client_id].value = val;
 
+<<<<<<< HEAD
 	if (similar_vote && votable->voted_on) {
 		pr_debug("%s: %s,%d Ignoring similar vote %s of val=%d\n",
+=======
+	pr_info("%s: %d voting for %d - %s\n",
+>>>>>>> 66f4e40... drivers: power: Import Xiaomi changes
 			votable->name,
 			client_str, client_id, enabled ? "on" : "off", val);
 		goto out;

@@ -4,6 +4,7 @@
  *  Copyright © 2007  Anton Vorontsov <cbou@mail.ru>
  *  Copyright © 2004  Szabolcs Gyurko
  *  Copyright © 2003  Ian Molton <spyro@f2s.com>
+ *  Copyright (C) 2017 XiaoMi, Inc.
  *
  *  Modified: 2004, Oct     Szabolcs Gyurko
  *
@@ -239,6 +240,7 @@ enum power_supply_property {
 	POWER_SUPPLY_PROP_ENABLE_JEITA_DETECTION,
 	POWER_SUPPLY_PROP_BATTERY_INFO,
 	POWER_SUPPLY_PROP_BATTERY_INFO_ID,
+<<<<<<< HEAD
 	POWER_SUPPLY_PROP_TYPEC_CC_ORIENTATION, /* 0: N/C, 1: CC1, 2: CC2 */
 	POWER_SUPPLY_PROP_TYPEC_POWER_ROLE,
 	POWER_SUPPLY_PROP_PD_ALLOWED,
@@ -260,6 +262,9 @@ enum power_supply_property {
 	POWER_SUPPLY_PROP_CONNECTOR_HEALTH,
 	POWER_SUPPLY_PROP_HW_CURRENT_MAX,
 	POWER_SUPPLY_PROP_REAL_TYPE,
+=======
+	POWER_SUPPLY_PROP_PROFILE_STATUS,
+>>>>>>> 66f4e40... drivers: power: Import Xiaomi changes
 	/* Local extensions of type int64_t */
 	POWER_SUPPLY_PROP_CHARGE_COUNTER_EXT,
 	/* Properties of type `const char *' */
