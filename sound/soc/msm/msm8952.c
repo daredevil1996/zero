@@ -2338,7 +2338,6 @@ static struct snd_soc_dai_link msm8952_dai[] = {
 		.be_id = MSM_FRONTEND_DAI_QCHAT,
 	},
 	{/* hw:x,38 */
-<<<<<<< HEAD
 		.name = "MSM8X16 Compress10",
 		.stream_name = "Compress10",
 		.cpu_dai_name	= "MultiMedia17",
@@ -2413,7 +2412,6 @@ static struct snd_soc_dai_link msm8952_dai[] = {
 		.ignore_pmdown_time = 1,
 		.be_id = MSM_FRONTEND_DAI_MULTIMEDIA29,
 	},
-=======
 		.name = "Quin MI2S_RX Hostless",
 		.stream_name = "Quin MI2S_RX Hostless",
 		.cpu_dai_name = "QUIN_MI2S_RX_HOSTLESS",
@@ -2444,7 +2442,7 @@ static struct snd_soc_dai_link msm8952_dai[] = {
 		.codec_name = "snd-soc-dummy",
 	},
 
->>>>>>> 0368684... ASoc: msm: Import Xiaomi changes
+
 	/* Backend I2S DAI Links */
 	{
 		.name = LPASS_BE_PRI_MI2S_RX,
