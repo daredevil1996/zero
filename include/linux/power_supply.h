@@ -262,9 +262,7 @@ enum power_supply_property {
 	POWER_SUPPLY_PROP_CONNECTOR_HEALTH,
 	POWER_SUPPLY_PROP_HW_CURRENT_MAX,
 	POWER_SUPPLY_PROP_REAL_TYPE,
-=======
 	POWER_SUPPLY_PROP_PROFILE_STATUS,
->>>>>>> 66f4e40... drivers: power: Import Xiaomi changes
 	/* Local extensions of type int64_t */
 	POWER_SUPPLY_PROP_CHARGE_COUNTER_EXT,
 	/* Properties of type `const char *' */
