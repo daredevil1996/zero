@@ -13582,15 +13582,13 @@ static int msm_routing_probe(struct snd_soc_platform *platform)
 
 	snd_soc_add_platform_controls(platform, msm_source_tracking_controls,
 				      ARRAY_SIZE(msm_source_tracking_controls));
-<<<<<<< HEAD
 
 	snd_soc_add_platform_controls(platform, aptx_dec_license_controls,
 					ARRAY_SIZE(aptx_dec_license_controls));
-=======
+
 	/* SMART_AMP start */
 	snd_soc_add_platform_controls(platform, smartamp_filter_mixer_controls, ARRAY_SIZE(smartamp_filter_mixer_controls));
 	/*SMART_AMP end */
->>>>>>> 0368684... ASoc: msm: Import Xiaomi changes
 	return 0;
 }
 
