@@ -2508,7 +2508,6 @@ static struct snd_soc_dai_driver msm_fe_dais[] = {
 	},
 	{
 		.capture = {
-<<<<<<< HEAD
 			.stream_name = "MultiMedia17 Capture",
 			.aif_name = "MM_UL17",
 			.rates = (SNDRV_PCM_RATE_8000_192000|
@@ -2668,7 +2667,7 @@ static struct snd_soc_dai_driver msm_fe_dais[] = {
 		.name = "MultiMedia29",
 		.probe = fe_dai_probe,
 	},
-=======
+	{        .capture = {
 			.stream_name = "QUIN MI2S_TX Hostless Capture",
 			.aif_name = "QUIN_MI2S_UL_HL",
 			.rates = SNDRV_PCM_RATE_8000_48000,
@@ -2699,8 +2698,6 @@ static struct snd_soc_dai_driver msm_fe_dais[] = {
 			.name = "QUIN_MI2S_RX_HOSTLESS",
 			.probe = fe_dai_probe,
 	},
-
->>>>>>> 0368684... ASoc: msm: Import Xiaomi changes
 };
 
 static int msm_fe_dai_dev_probe(struct platform_device *pdev)
