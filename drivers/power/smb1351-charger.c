@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 /* Copyright (c) 2015-2017 The Linux Foundation. All rights reserved.
-=======
-/* Copyright (c) 2015-2016 The Linux Foundation. All rights reserved.
  * Copyright (C) 2017 XiaoMi, Inc.
->>>>>>> 66f4e40... drivers: power: Import Xiaomi changes
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
