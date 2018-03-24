@@ -2412,6 +2412,7 @@ static struct snd_soc_dai_link msm8952_dai[] = {
 		.ignore_pmdown_time = 1,
 		.be_id = MSM_FRONTEND_DAI_MULTIMEDIA29,
 	},
+	{/* hw:x,38 */
 		.name = "Quin MI2S_RX Hostless",
 		.stream_name = "Quin MI2S_RX Hostless",
 		.cpu_dai_name = "QUIN_MI2S_RX_HOSTLESS",
@@ -2442,8 +2443,7 @@ static struct snd_soc_dai_link msm8952_dai[] = {
 		.codec_name = "snd-soc-dummy",
 	},
 
-
-	/* Backend I2S DAI Links */
+         /* Backend I2S DAI Links */
 	{
 		.name = LPASS_BE_PRI_MI2S_RX,
 		.stream_name = "Primary MI2S Playback",
