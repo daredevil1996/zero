@@ -38,9 +38,7 @@
 #include <linux/of_batterydata.h>
 #include <linux/msm_bcl.h>
 #include <linux/ktime.h>
-<<<<<<< HEAD
 #include <linux/pmic-voter.h>
-=======
 #include "pmic-voter.h"
 #include <linux/fb.h>
 
@@ -48,7 +46,6 @@
 static int fb_notifier_callback(struct notifier_block *self,
 				unsigned long event, void *data);
 #endif
->>>>>>> 66f4e40... drivers: power: Import Xiaomi changes
 
 /* Mask/Bit helpers */
 #define _SMB_MASK(BITS, POS) \
@@ -366,7 +363,6 @@ enum wake_reason {
 	PM_CHARGING_CHECK = BIT(7),
 };
 
-<<<<<<< HEAD
 /* fcc_voters */
 #define ESR_PULSE_FCC_VOTER	"ESR_PULSE_FCC_VOTER"
 #define BATT_TYPE_FCC_VOTER	"BATT_TYPE_FCC_VOTER"
@@ -414,7 +410,7 @@ enum wake_reason {
  * fake battery voter, if battery id-resistance around 7.5 Kohm
  */
 #define FAKE_BATTERY_EN_VOTER	"FAKE_BATTERY_EN_VOTER"
-=======
+
 enum fcc_voters {
 	ESR_PULSE_FCC_VOTER,
 	BATT_TYPE_FCC_VOTER,
@@ -475,8 +471,6 @@ enum enable_voters {
 	FAKE_BATTERY_EN_VOTER,
 	NUM_EN_VOTERS,
 };
->>>>>>> 66f4e40... drivers: power: Import Xiaomi changes
-
 /* battchg_enable_voters */
 	/* userspace has disabled battery charging */
 #define BATTCHG_USER_EN_VOTER	"BATTCHG_USER_EN_VOTER"
@@ -510,7 +504,6 @@ enum enable_voters {
 #define	HVDCP_OTG_VOTER			"HVDCP_OTG_VOTER"
 #define	HVDCP_PULSING_VOTER		"HVDCP_PULSING_VOTER"
 
-<<<<<<< HEAD
 static int smbchg_debug_mask;
 =======
 enum hw_aicl_rerun_disable_voters {
@@ -535,7 +528,6 @@ enum hvdcp_voters {
 	NUM_HVDCP_VOTERS,
 };
 static int smbchg_debug_mask = PR_STATUS | PR_INTERRUPT | PR_MISC;
->>>>>>> 66f4e40... drivers: power: Import Xiaomi changes
 module_param_named(
 	debug_mask, smbchg_debug_mask, int, S_IRUSR | S_IWUSR
 );
@@ -5158,14 +5150,12 @@ static int smbchg_change_usb_supply_type(struct smbchg_chip *chip,
 		goto out;
 	}
 
-<<<<<<< HEAD
 	if (!chip->skip_usb_notification) {
 		propval.intval = type;
 		chip->usb_psy->set_property(chip->usb_psy,
 				POWER_SUPPLY_PROP_REAL_TYPE,
 				&propval);
 	}
-=======
 #if defined(CONFIG_FB)
 	if (type != POWER_SUPPLY_TYPE_UNKNOWN)
 		determine_thermal_current(chip);
@@ -5173,9 +5163,7 @@ static int smbchg_change_usb_supply_type(struct smbchg_chip *chip,
 
 	if (!chip->skip_usb_notification)
 		power_supply_set_supply_type(chip->usb_psy, type);
->>>>>>> 66f4e40... drivers: power: Import Xiaomi changes
-
-	/*
+         /*
 	 * otherwise if it is unknown, remove vote
 	 * and set type after the vote
 	 */
@@ -5406,7 +5394,6 @@ static void handle_usb_removal(struct smbchg_chip *chip)
 	/* cancel/wait for hvdcp pending work if any */
 	cancel_delayed_work_sync(&chip->hvdcp_det_work);
 	smbchg_relax(chip, PM_DETECT_HVDCP);
-<<<<<<< HEAD
 	smbchg_change_usb_supply_type(chip, POWER_SUPPLY_TYPE_UNKNOWN);
 
 	if (chip->parallel.use_parallel_aicl) {
@@ -5414,9 +5401,7 @@ static void handle_usb_removal(struct smbchg_chip *chip)
 		pr_smb(PR_MISC, "complete hvdcp_det_done\n");
 	}
 
-=======
 	smbchg_change_usb_supply_type(chip, POWER_SUPPLY_TYPE_USB);
->>>>>>> 66f4e40... drivers: power: Import Xiaomi changes
 	if (!chip->skip_usb_notification) {
 		pr_smb(PR_MISC, "setting usb psy present = %d\n",
 				chip->usb_present);
