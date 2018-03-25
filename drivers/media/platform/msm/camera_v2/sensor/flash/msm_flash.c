@@ -776,41 +776,6 @@ static int32_t msm_flash_config(struct msm_flash_ctrl_t *flash_ctrl,
 		}
 		break;
 	case CFG_FLASH_OFF:
-<<<<<<< HEAD
-		if ((flash_ctrl->flash_state != MSM_CAMERA_FLASH_RELEASE) &&
-			(flash_ctrl->flash_state != MSM_CAMERA_FLASH_OFF)) {
-			rc = flash_ctrl->func_tbl->camera_flash_off(
-				flash_ctrl, flash_data);
-			if (!rc)
-				flash_ctrl->flash_state = MSM_CAMERA_FLASH_OFF;
-		} else {
-			CDBG(pr_fmt("Invalid state : %d\n"),
-				flash_ctrl->flash_state);
-		}
-		break;
-	case CFG_FLASH_LOW:
-		if ((flash_ctrl->flash_state == MSM_CAMERA_FLASH_OFF) ||
-			(flash_ctrl->flash_state == MSM_CAMERA_FLASH_INIT)) {
-			rc = flash_ctrl->func_tbl->camera_flash_low(
-				flash_ctrl, flash_data);
-			if (!rc)
-				flash_ctrl->flash_state = MSM_CAMERA_FLASH_LOW;
-		} else {
-			CDBG(pr_fmt("Invalid state : %d\n"),
-				flash_ctrl->flash_state);
-		}
-		break;
-	case CFG_FLASH_HIGH:
-		if ((flash_ctrl->flash_state == MSM_CAMERA_FLASH_OFF) ||
-			(flash_ctrl->flash_state == MSM_CAMERA_FLASH_INIT)) {
-			rc = flash_ctrl->func_tbl->camera_flash_high(
-				flash_ctrl, flash_data);
-			if (!rc)
-				flash_ctrl->flash_state = MSM_CAMERA_FLASH_HIGH;
-		} else {
-			CDBG(pr_fmt("Invalid state : %d\n"),
-				flash_ctrl->flash_state);
-=======
 		if (flash_ctrl->flash_state == MSM_CAMERA_FLASH_INIT) {
 			rc = flash_ctrl->func_tbl->camera_flash_off(
 				flash_ctrl, flash_data);
@@ -829,7 +794,6 @@ static int32_t msm_flash_config(struct msm_flash_ctrl_t *flash_ctrl,
 			rc = flash_ctrl->func_tbl->camera_flash_high(
 				flash_ctrl, flash_data);
 			g_flashlight_brightness = 100;
->>>>>>> 1a3d086... drivers: camera_v2: Import Xiaomi changes
 		}
 		break;
 	default:
